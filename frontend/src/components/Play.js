@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ChoiceButtons from './ChoiceButtons';
 import Score from './Score';
 import Result from './Result';
-import imageRules from '../images/image-rules-bonus.svg'
+import imageRules from '../images/image-rules-bonus.svg';
 
 const Play = () => {
   const [playerChoice, setPlayerChoice] = useState(null);
@@ -29,7 +29,7 @@ const Play = () => {
       (player === 'scissors' && (computer === 'paper' || computer === 'lizard')) ||
       (player === 'lizard' && (computer === 'spock' || computer === 'paper')) ||
       (player === 'spock' && (computer === 'scissors' || computer === 'rock'))
-    ) { 
+    ) {
       return 'player';
     } else {
       return 'computer';
@@ -63,7 +63,6 @@ const Play = () => {
     }
   };
 
-  
   const resetGame = () => {
     setPlayerChoice(null);
     setComputerChoice(null);
@@ -74,33 +73,30 @@ const Play = () => {
   };
 
   return (
-    <div>
-      <h3>Rock</h3>
-      <h3>Paper</h3>
-      <h3>Scissors</h3>
-      <h3>Lizard</h3>
-      <h3>Spock</h3>
-      
+    <div className="game-container">
+      <h3 className="game-title">Rock Paper Scissors Lizard Spock</h3>
       <Score playerScore={playerScore} computerScore={computerScore} />
       <ChoiceButtons choice={PlayerChoice} />
       <Result result={result} playerChoice={playerChoice} computerChoice={computerChoice} />
 
       {gameOver && (
-        <div>
-          <h2>Partie terminée ! {playerScore === 5 ? "Vous avez gagné !" : "L'ordinateur a gagné !"}</h2>
-          <button onClick={resetGame}>Rejouer</button>
+        <div className="game-over">
+          <h2>{playerScore === 5 ? "Vous avez gagné !" : "L'ordinateur a gagné !"}</h2>
+          <button onClick={resetGame} className="reset-button">Rejouer</button>
         </div>
       )}
 
-      <button onClick={() => setShowRules(!showRules)}>Voir les règles</button>
+      <button onClick={() => setShowRules(!showRules)} className="rules-button">
+        Voir les règles
+      </button>
 
       {showRules && (
-        <div>
+        <div className="rules-container">
           <h2>Règles du jeu :</h2>
           <img 
             src={imageRules} 
             alt="Règles du jeu" 
-            style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }} 
+            className="rules-image"
           />
         </div>
       )}

@@ -3,7 +3,7 @@ import React from "react";
 const Result = ({playerChoice, computerChoice, result}) => {
 
     return (
-        <div className="result-container">
+        <div className="result">
             <h3>Result {result === 'continuez' ? 'Continuez'
             : result === 'player' ? 'You Win'
             : 'You Lose'} </h3> 

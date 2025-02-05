@@ -10,7 +10,7 @@ import spock from "../images/icon-spock.svg"
 const ChoiceButtons = ({choice}) => {
 
     return (
-        <div className="choice-buttons-container">
+        <div className="choice-button">
             <button onClick={()=> choice('rock')}>Rock</button>
             <img src={rock}/>
             <button onClick={()=> choice('paper')}>Paper</button>
