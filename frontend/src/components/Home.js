@@ -10,14 +10,14 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Bienvenue sur la page d'accueil !</h1>
+      <h1>Bienvenue sur RPS Game !</h1>
       <p>Cliquez ci-dessous pour commencer à jouer.</p>
-      <button>
+      <button className='choice-button'>
         <Link to="/play">Jouer</Link>
       </button>
 
      
-      <button onClick={toggleRules}>Voir les règles</button>
+      <button onClick={toggleRules} className='choice-button'>Voir les règles</button>
 
       
       {showRules && (

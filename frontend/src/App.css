@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,15 +6,14 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #1c1c1c; /* Fond sombre */
-  color: #f5f5f5; /* Texte clair pour contraster */
+  background-color: #1c1c1c; 
+  color: #f5f5f5; 
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-/* Main Container */
 .game-container {
   background: linear-gradient(145deg, #2e2e2e, #1f1f1f); /* Dégradé sombre élégant */
   border-radius: 12px;
@@ -32,185 +30,136 @@ body {
 }
 
 .game-container:hover {
-  transform: scale(1.05); /* Légère animation au survol */
+  transform: scale(1.05); 
 }
 
 .game-title {
   font-size: 28px;
-  color: #fff; /* Texte en blanc pour bien ressortir */
+  color: #fff; 
   margin-bottom: 20px;
   font-weight: bold;
 }
 
-/* Buttons for Player Choices */
+
+.choice-buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.choice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .choice-button {
-  background-color: #444; /* Gris foncé pour les boutons */
+  background-color: #444; 
   color: #fff;
-  border: 2px solid #333; /* Bordure discrète mais visible */
+  border: 2px solid #333; 
   padding: 16px 32px;
   border-radius: 8px;
   font-size: 18px;
   cursor: pointer;
-  margin: 10px;
+  margin-bottom: 10px;
   transition: all 0.3s ease;
 }
 
 .choice-button:hover {
-  background-color: #555; /* Changement subtil de couleur au survol */
+  background-color: #555; 
   transform: scale(1.05);
 }
 
 .choice-button:active {
-  transform: scale(0.95); /* Légère réduction au clic */
+  transform: scale(0.95); 
 }
 
-/* Dynamically Display Player's Choice */
-.choice-display {
-  background-color: #1f2a44; /* Fond sombre pour afficher le choix du joueur */
-  color: #fff;
-  font-size: 32px;
-  padding: 20px;
-  margin-top: 20px;
+
+.choice-image {
+  width: 60px; 
+  height: 60px;
   border-radius: 10px;
-  display: inline-block;
-  width: 60%;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
+  background-color: white;
 }
 
-/* Player and Computer's Choice Centered */
-.choice-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  margin-top: 20px;
+.choice-container:nth-child(1) .choice-image {
+  border: 5px solid #e74c3c; 
 }
 
-.choice-display-player, .choice-display-computer {
-  background-color: #1f2a44; /* Fond sombre pour afficher le choix du joueur */
-  color: #fff;
-  font-size: 32px;
-  padding: 20px;
-  margin: 0 10px;
-  border-radius: 10px;
-  display: inline-block;
-  width: 40%;
-  text-align: center;
+.choice-container:nth-child(2) .choice-image {
+  border: 5px solid #2980b9; 
 }
 
-/* Score Display */
-.score {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.7); /* Fond sombre pour le score */
-  padding: 10px;
-  border-radius: 10px;
+.choice-container:nth-child(3) .choice-image {
+  border: 5px solid #2ecc71; 
 }
 
-.score p {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
+.choice-container:nth-child(4) .choice-image {
+  border: 5px solid #f39c12; 
 }
 
-/* Result Display */
-.result {
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  animation: fadeIn 0.5s ease-in-out;
+.choice-container:nth-child(5) .choice-image {
+  border: 5px solid #8e44ad; 
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.rules-container {
+  margin-top: 30px; 
 }
 
-/* Reset Button */
-.reset-button {
-  background-color: #e74c3c; /* Rouge sombre pour le bouton Rejouer */
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.reset-button:hover {
-  background-color: #c0392b;
-  transform: scale(1.05);
-}
-
-/* Rules Button */
 .rules-button {
-  background-color: #2980b9; /* Bleu sombre pour les règles */
-  color: white;
-  padding: 12px 25px;
+  background-color: #f39c12; 
+  color: #fff;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 8px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .rules-button:hover {
-  background-color: #1c6692;
-  transform: scale(1.05);
+  background-color: #e67e22; 
+  transform: scale(1.05); 
 }
 
-/* Rules Image */
-.rules-container img {
-  width: 100%;
-  max-width: 550px;
-  margin-top: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+.rules-button:active {
+  transform: scale(0.95); 
 }
 
-.rules-container img:hover {
-  transform: scale(1.05); /* Légère animation de survol pour l'image */
-}
-
-/* Buttons at the Bottom */
-.choice-buttons-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 40px;
-  gap: 20px;
-}
-
-.choice-buttons-container button {
-  background-color: #444;
+.reset-button{
+  background-color: red; 
   color: #fff;
-  border: none;
-  padding: 15px 30px;
   font-size: 18px;
-  font-weight: bold;
+  padding: 12px 20px;
   border-radius: 8px;
+  border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.reset-button:hover {
+  background-color: darkred;
+  transform: scale(1.05); 
 }
 
-.choice-buttons-container button:hover {
-  background-color: #555;
-  transform: scale(1.1);
+.reset-button:active {
+  transform: scale(0.95); 
+}
+.score {
+  background-color: black;
+  border: solid 5px #1f1f1f;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 10px;
+}
+.result {
+ margin: 10px 0px 10px 0px;
 }
 
-.choice-buttons-container button:active {
-  background-color: #333;
-  transform: scale(1);
-}
-
-/* Responsive Design */
 @media screen and (max-width: 600px) {
   .game-container {
     padding: 20px;
